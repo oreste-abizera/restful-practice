@@ -35,6 +35,8 @@ code {
 .dashboard_layout__content {
   width: 80%;
   background-color: #f4f9ff;
+  overflow-y: auto;
+  padding-bottom: 20px;
 }
 
 .dashboard_layout__sidebar__link {
@@ -63,6 +65,8 @@ code {
   height: 80px;
   background-color: white;
   padding: 0 43px;
+  position: sticky;
+  top: 0;
 }
 
 .reusable_input__container {

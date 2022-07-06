@@ -1,15 +1,25 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../context/AppContext";
 import url from "../helpers/url";
 import DashboardLayout from "../layouts/DashboardLayout";
 
 const HistoryPage = () => {
+  const navigate = useNavigate();
+  const { isLoggedIn } = useContext(AppContext);
   const [history, setHistory] = useState([]);
   useEffect(() => {
     axios.get(url + "/vehicles-history").then((response) => {
       setHistory(response.data.data);
     });
   }, []);
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate("/");
+    }
+  }, [isLoggedIn]);
   return (
     <DashboardLayout>
       <h1

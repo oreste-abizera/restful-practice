@@ -1,15 +1,25 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../context/AppContext";
 import url from "../helpers/url";
 import DashboardLayout from "../layouts/DashboardLayout";
 
 const OwnersPage = () => {
+  const navigate = useNavigate();
+  const { isLoggedIn } = useContext(AppContext);
   const [owners, setowners] = useState([]);
   useEffect(() => {
     axios.get(url + "/vehicle-owners").then((response) => {
       setowners(response.data.data);
     });
   }, []);
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate("/");
+    }
+  }, [isLoggedIn]);
 
   return (
     <DashboardLayout>

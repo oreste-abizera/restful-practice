@@ -6,8 +6,11 @@ import icon3 from "../assets/icons/register-vehicle.svg";
 import icon4 from "../assets/icons/history.svg";
 import searchIcon from "../assets/icons/search.svg";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AppContext } from "../context/AppContext";
 
 const DashboardLayout = ({ children }) => {
+  const { user } = useContext(AppContext);
   const sidebarLinks = [
     { id: 1, name: "Dashboard", link: "/dashboard", icon: icon1 },
     { id: 2, name: "Register Owner", link: "/register-owner", icon: icon2 },
@@ -25,11 +28,7 @@ const DashboardLayout = ({ children }) => {
           style={{ width: "48px", height: "48px", margin: "72px auto" }}
         ></img>
         {sidebarLinks.map((link) => (
-          <Link
-            to={link.link}
-            key={link._id}
-            style={{ textDecoration: "none" }}
-          >
+          <Link to={link.link} key={link.id} style={{ textDecoration: "none" }}>
             <div className="dashboard_layout__sidebar__link">
               <img
                 src={link.icon}
@@ -77,7 +76,9 @@ const DashboardLayout = ({ children }) => {
               style={{ width: "40px", height: "40px", borderRadius: "50%" }}
             ></img>
             <div style={{}}>
-              <p style={{ color: "#6484AA", fontWeight: "500" }}>JackWilder</p>
+              <p style={{ color: "#6484AA", fontWeight: "500" }}>
+                {user?.info?.names || "JackWilder"}
+              </p>
               <p
                 style={{
                   color: "#C3CBD4",

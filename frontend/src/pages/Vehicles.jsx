@@ -1,10 +1,12 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import url from "../helpers/url";
 import DashboardLayout from "../layouts/DashboardLayout";
 import Modal from "react-modal";
 import Select from "react-select";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../context/AppContext";
 
 const customStyles = {
   content: {
@@ -18,6 +20,8 @@ const customStyles = {
 };
 
 const VehiclesPage = () => {
+  const navigate = useNavigate();
+  const { isLoggedIn } = useContext(AppContext);
   const [reload, setReload] = useState(false);
   const [selectedOwner, setSelectedOwner] = useState(null);
   const [selectedVehicle, setSelectedVehicle] = useState(null);
@@ -75,6 +79,12 @@ const VehiclesPage = () => {
       label: owner.names,
     };
   });
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate("/");
+    }
+  }, [isLoggedIn]);
 
   return (
     <DashboardLayout>

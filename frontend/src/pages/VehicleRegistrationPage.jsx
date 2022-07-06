@@ -1,14 +1,16 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import Input from "../components/Input";
 import SubmitButton from "../components/SubmitButton";
+import { AppContext } from "../context/AppContext";
 import url from "../helpers/url";
 import DashboardLayout from "../layouts/DashboardLayout";
 
 const VehicleRegistrationPage = () => {
   const navigate = useNavigate();
+  const { isLoggedIn } = useContext(AppContext);
   const [state, setState] = useState({
     plateNumber: "",
     chasisNumber: "",
@@ -42,6 +44,12 @@ const VehicleRegistrationPage = () => {
       );
     }
   };
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate("/");
+    }
+  }, [isLoggedIn]);
   return (
     <DashboardLayout>
       <h1
