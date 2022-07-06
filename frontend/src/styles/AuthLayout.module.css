@@ -39,6 +39,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow-y: auto;
+  padding-bottom: 10px;
 }
 
 .auth__card {
@@ -119,4 +121,10 @@
   font-size: 16px;
   text-decoration: underline;
   color: #6484aa;
+}
+
+@media screen and (max-width: 768px) {
+  .auth__card__form__group {
+    width: 300px !important;
+  }
 }

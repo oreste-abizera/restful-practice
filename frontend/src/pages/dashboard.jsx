@@ -36,7 +36,14 @@ const DashboardPage = () => {
       >
         DASHBOARD
       </h1>
-      <div style={{ display: "flex", gap: "23px", marginLeft: "59px" }}>
+      <div
+        style={{
+          display: "flex",
+          gap: "23px",
+          marginLeft: "59px",
+          flexWrap: "wrap",
+        }}
+      >
         <DashboardCard
           text1={"Total Owners"}
           text4={"users"}
@@ -50,6 +57,13 @@ const DashboardPage = () => {
           icon={increaseIcon}
           text2={statistics.numberOfVehicles || "0"}
           text3={"2,3%"}
+        />
+        <DashboardCard
+          text1={"Total Admins"}
+          text4={"admins"}
+          icon={increaseIcon}
+          text2={statistics.numberOfAdmins || "0"}
+          text3={"6,3%"}
         />
         <DashboardCard
           text1={"Total Engagement"}

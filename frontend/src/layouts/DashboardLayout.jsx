@@ -43,6 +43,7 @@ const DashboardLayout = ({ children }) => {
       <div className="dashboard_layout__content">
         <div className="dashboard_layout__navbar">
           <div
+          className="dashboard__input__container"
             style={{
               height: "50px",
               width: "505px",

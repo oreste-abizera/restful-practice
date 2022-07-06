@@ -101,6 +101,12 @@ module.exports.linkVehicleToOwner = asyncHandler(async (req, res, next) => {
   const { vehicleId, ownerId, date, description } = req.body;
   const vehicle = await Vehicle.findById(vehicleId);
   const owner = await Owner.findById(ownerId);
+  // check if owner given in body is already linked to vehicle
+  if (vehicle.owner.toString() === ownerId) {
+    return next(
+      new ErrorResponse("Vehicle is already linked to this owner", 400)
+    );
+  }
   if (vehicle && owner) {
     const vehicleHistory = await VehicleHistory.create({
       vehicle: vehicleId,

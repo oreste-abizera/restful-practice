@@ -104,3 +104,22 @@ code {
   color: #6484aa;
   font-size: 16px;
 }
+
+@media screen and (max-width: 768px) {
+  .dashboard_layout__sidebar {
+    width: 0;
+  }
+  .dashboard_layout__content {
+    width: 100%;
+  }
+  .reusable_input__container {
+    width: 300px;
+  }
+  .dashboard_layout__navbar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .dashboard__input__container {
+    width: 150px;
+  }
+}
