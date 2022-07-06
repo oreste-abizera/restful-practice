@@ -1,5 +1,7 @@
 const asyncHandler = require("../middleware/async");
 const VehicleHistory = require("../models/VehicleHistory");
+const Vehicle = require("../models/Vehicle");
+const Owner = require("../models/Owner");
 
 module.exports.getVehiclesOwnershipHistory = asyncHandler(
   async (req, res, next) => {

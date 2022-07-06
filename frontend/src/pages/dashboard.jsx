@@ -14,7 +14,6 @@ const DashboardPage = () => {
       setStatistics(response.data.data);
     });
   }, []);
-  console.log(statistics);
   return (
     <DashboardLayout>
       <h1
@@ -32,21 +31,21 @@ const DashboardPage = () => {
           text1={"Total Owners"}
           text4={"users"}
           icon={increaseIcon}
-          text2="1,285"
+          text2={statistics.numberOfOwners || "0"}
           text3={"6,3%"}
         />
         <DashboardCard
           text1={"Total Vehicles"}
           text4={"vehicles"}
           icon={increaseIcon}
-          text2="136"
+          text2={statistics.numberOfVehicles || "0"}
           text3={"2,3%"}
         />
         <DashboardCard
           text1={"Total Engagement"}
           text4={"interactions"}
           icon={decreaseIcon}
-          text2="156,5 RB"
+          text2={(statistics.numberOfInteractions || "0") + " INT"}
           text3={"6,3%"}
           red={true}
         />

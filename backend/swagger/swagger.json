@@ -872,11 +872,11 @@
           },
           "updatedAt": {
             "type": "string",
-            "example": "7/6/2022, 2:19:03 PM"
+            "example": "7/6/2022, 3:55:49 PM"
           },
           "createdAt": {
             "type": "string",
-            "example": "7/6/2022, 2:19:03 PM"
+            "example": "7/6/2022, 3:55:49 PM"
           }
         }
       },
@@ -895,7 +895,7 @@
           },
           "date": {
             "type": "string",
-            "example": "7/6/2022, 2:19:03 PM"
+            "example": "7/6/2022, 3:55:49 PM"
           },
           "price": {
             "type": "string",
@@ -912,11 +912,11 @@
           },
           "updatedAt": {
             "type": "string",
-            "example": "7/6/2022, 2:19:03 PM"
+            "example": "7/6/2022, 3:55:49 PM"
           },
           "createdAt": {
             "type": "string",
-            "example": "7/6/2022, 2:19:03 PM"
+            "example": "7/6/2022, 3:55:49 PM"
           }
         }
       }
