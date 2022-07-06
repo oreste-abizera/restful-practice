@@ -1,0 +1,122 @@
+/* Language: css */
+/* Path: client\src\styles\AuthLayout.module.css */
+
+.authLayout__container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.authLayout__container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  left: 0;
+  top: 0;
+  background-color: #3786e5;
+}
+
+.authLayout__container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  left: 0;
+  top: 50%;
+  background-color: #f4f9ff;
+}
+
+.authLayout__wrapper {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth__card {
+  box-shadow: 0px 4px 4px rgba(27, 50, 79, 0.06);
+  border-radius: 16px;
+  background: #ffffff;
+  padding-top: 48px;
+  padding-bottom: 44px;
+  padding-right: 70px;
+  padding-left: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth__card__header {
+  margin-bottom: 30px;
+}
+.auth__card__header h3 {
+  font-size: 32px;
+  font-weight: 500;
+  color: #3786e5;
+}
+
+.auth__card__form__group {
+  margin-bottom: 18px;
+  background: #ffffff;
+  border: 1.5px solid #abc9ed;
+  border-radius: 8px;
+  width: 417px;
+  padding: 16px 24px;
+}
+.auth__card__form__group input {
+  width: 100%;
+  height: 23px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #abc9ed;
+  border: none;
+  outline: none;
+}
+
+.auth__card__form__group__submit button {
+  background: #3786e5;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  font-size: 18px;
+  color: #ffffff;
+  width: 135px;
+  height: 56px;
+  cursor: pointer;
+}
+
+.auth__card__form__checkbox {
+  width: 18px;
+  height: 18px;
+  background: #ffffff;
+  border: 1px solid #abc9ed;
+  border-radius: 3px;
+  margin-right: 8px;
+}
+
+.auth__card__remember__me__text {
+  font-weight: 400;
+  font-size: 16px;
+  color: #c2c8cf;
+}
+
+.auth__card__forgot {
+  margin-top: 30px;
+}
+
+.auth__card__forgot a {
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: underline;
+  color: #6484aa;
+}
