@@ -3,9 +3,11 @@ const router = express.Router();
 const { registerDefinition } = require("swaggiffy");
 const {
   getVehiclesOwnershipHistory,
+  statistics,
 } = require("../controllers/vehicles-history.controller");
 
 router.get("/", getVehiclesOwnershipHistory);
+router.get("/statistics", statistics);
 
 registerDefinition(router, {
   tags: "VehicleHistory",

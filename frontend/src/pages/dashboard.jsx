@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import DashboardLayout from "../layouts/DashboardLayout";
 import increaseIcon from "../assets/icons/increase.svg";
 import decreaseIcon from "../assets/icons/decrease.svg";
 import DashboardCard from "../components/DashboardCard";
+import axios from "axios";
+import url from "../helpers/url";
 
 const DashboardPage = () => {
+  const [statistics, setStatistics] = useState([]);
+
+  useEffect(() => {
+    axios.get(url + "/vehicles-history/statistics").then((response) => {
+      setStatistics(response.data.data);
+    });
+  }, []);
+  console.log(statistics);
   return (
     <DashboardLayout>
       <h1
@@ -38,6 +48,7 @@ const DashboardPage = () => {
           icon={decreaseIcon}
           text2="156,5 RB"
           text3={"6,3%"}
+          red={true}
         />
       </div>
     </DashboardLayout>

@@ -14,3 +14,18 @@ module.exports.getVehiclesOwnershipHistory = asyncHandler(
     }
   }
 );
+
+module.exports.statistics = asyncHandler(async (req, res, next) => {
+  const numberOfVehicles = await VehicleHistory.countDocuments();
+  const numberOfOwners = await Owner.countDocuments();
+  const numberOfHistory = await VehicleHistory.countDocuments();
+
+  return res.status(200).json({
+    success: true,
+    data: {
+      numberOfVehicles,
+      numberOfOwners,
+      interactions: numberOfHistory,
+    },
+  });
+});

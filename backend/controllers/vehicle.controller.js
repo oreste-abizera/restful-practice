@@ -7,6 +7,13 @@ const ErrorResponse = require("../utils/errorResponse");
 module.exports.registerVehicle = asyncHandler(async (req, res, next) => {
   const { chasisNumber, manufacturer, year, price, plateNumber, model, owner } =
     req.body;
+  // platenumber is unique in the database
+  const vehicleWithPlateNumber = await Vehicle.findOne({ plateNumber });
+  if (vehicleWithPlateNumber) {
+    return next(
+      new ErrorResponse("Vehicle with same plate number already exists", 400)
+    );
+  }
   const vehicle = await Vehicle.create({
     chasisNumber,
     manufacturer,

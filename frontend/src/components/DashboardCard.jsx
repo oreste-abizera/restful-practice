@@ -1,6 +1,6 @@
-import React from "react";
+import axios from "axios";
 
-const DashboardCard = ({ icon, text1, text2, text3, text4 }) => {
+const DashboardCard = ({ icon, text1, text2, text3, text4, red = false }) => {
   return (
     <div
       style={{
@@ -50,7 +50,7 @@ const DashboardCard = ({ icon, text1, text2, text3, text4 }) => {
             alt="icon"
             style={{ width: "14px", height: "14px" }}
           />
-          <p style={{ color: "#64C874" }}>{text3}</p>
+          <p style={{ color: red ? "#ED6F6F" : "#64C874" }}>{text3}</p>
         </div>
         <p style={{ color: "#D0D2D3" }}>{text4}</p>
       </div>

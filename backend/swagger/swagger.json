@@ -724,6 +724,52 @@
             }
           ]
         }
+      },
+      "/api/v1/vehicles-history/statistics": {
+        "get": {
+          "tags": [
+            "VehicleHistory"
+          ],
+          "summary": "",
+          "description": "",
+          "parameters": [],
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/VehicleHistory"
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "error": {
+                    "type": "string",
+                    "example": "Internal Server Error"
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {
+              "Bearer": [
+                "global"
+              ]
+            }
+          ]
+        }
       }
     },
     "definitions": {
@@ -826,11 +872,11 @@
           },
           "updatedAt": {
             "type": "string",
-            "example": "7/6/2022, 1:58:45 PM"
+            "example": "7/6/2022, 2:19:03 PM"
           },
           "createdAt": {
             "type": "string",
-            "example": "7/6/2022, 1:58:45 PM"
+            "example": "7/6/2022, 2:19:03 PM"
           }
         }
       },
@@ -849,7 +895,7 @@
           },
           "date": {
             "type": "string",
-            "example": "7/6/2022, 1:58:45 PM"
+            "example": "7/6/2022, 2:19:03 PM"
           },
           "price": {
             "type": "string",
@@ -866,11 +912,11 @@
           },
           "updatedAt": {
             "type": "string",
-            "example": "7/6/2022, 1:58:45 PM"
+            "example": "7/6/2022, 2:19:03 PM"
           },
           "createdAt": {
             "type": "string",
-            "example": "7/6/2022, 1:58:45 PM"
+            "example": "7/6/2022, 2:19:03 PM"
           }
         }
       }
