@@ -86,7 +86,7 @@ const VehiclesPage = () => {
           margin: "64px 0 48px 59px",
         }}
       >
-        Vehicles
+        List of Vehicles
       </h1>
       <div style={{ display: "flex", marginLeft: "59px" }}>
         <div

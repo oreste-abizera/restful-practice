@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import DashboardPage from "./pages/dashboard";
 import HistoryPage from "./pages/HistoryPage";
 import LoginPage from "./pages/LoginPage";
+import OwnersPage from "./pages/Owners";
 import RegisterOwnerPage from "./pages/RegisterOwnerPage";
 import RegisterPage from "./pages/RegisterPage";
 import VehicleRegistrationPage from "./pages/VehicleRegistrationPage";
@@ -17,6 +18,7 @@ function App() {
       <Route path="/register-vehicle" element={<VehicleRegistrationPage />} />
       <Route path="/history" element={<HistoryPage />} />
       <Route path="/vehicles" element={<VehiclesPage />} />
+      <Route path="/owners" element={<OwnersPage />} />
     </Routes>
   );
 }

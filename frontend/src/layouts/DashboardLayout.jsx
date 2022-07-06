@@ -13,6 +13,7 @@ const DashboardLayout = ({ children }) => {
     { id: 2, name: "Register Owner", link: "/register-owner", icon: icon2 },
     { id: 3, name: "Register Vehicle", link: "/register-vehicle", icon: icon3 },
     { id: 4, name: "Vehicles List", link: "/vehicles", icon: icon3 },
+    { id: 2, name: "Owners List", link: "/owners", icon: icon2 },
     { id: 5, name: "History", link: "/history", icon: icon4 },
   ];
   return (
