@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import DashboardLayout from "../layouts/DashboardLayout";
 import increaseIcon from "../assets/icons/increase.svg";
 import decreaseIcon from "../assets/icons/decrease.svg";
 import DashboardCard from "../components/DashboardCard";
 import axios from "axios";
 import url from "../helpers/url";
+import { AppContext } from "../context/AppContext";
+import { useNavigate } from "react-router-dom";
 
 const DashboardPage = () => {
+  const navigate = useNavigate();
+  const { isLoggedIn } = useContext(AppContext);
   const [statistics, setStatistics] = useState([]);
 
   useEffect(() => {
@@ -14,6 +18,12 @@ const DashboardPage = () => {
       setStatistics(response.data.data);
     });
   }, []);
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate("/");
+    }
+  }, [isLoggedIn]);
   return (
     <DashboardLayout>
       <h1
